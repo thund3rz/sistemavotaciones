@@ -1,0 +1,305 @@
+.center-text{
+text-align: center;
+}
+
+.background-grey {
+
+    background-color:lightslategray;
+    padding-right: 0px;
+
+}
+
+.background-blue {
+
+    background-color: rgb(3, 3, 104);
+}
+
+
+.little-padding {
+
+    padding-bottom: 1px;
+}
+
+.little-padding2 {
+
+    padding-bottom: 74px;
+
+}
+
+.caja-morada {
+    width:   20%;
+    height:  20%;
+    background-color: mediumpurple;
+    border:  0px solid;
+    padding: 0px;
+    margin:  0px;
+  }
+
+
+  .caja-blanca {
+    width:   20%;
+    height:  20%;
+    background-color: white;
+    border:  0px solid;
+    padding: 0px;
+    margin:  0px;
+  }
+
+  .limite {
+    width: 2000px;
+    background-color: mediumpurple;
+    border: 30px solid;
+    border-color: mediumpurple;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .input-error {
+    border-color: red;
+    border-width: medium;
+  }
+
+  .right-mr{
+
+    margin-right: 1%;
+  }
+
+  .card-co1{
+    width: 18rem; 
+    background-color: mediumpurple;
+
+  }
+
+  .no-borde{
+    border: 0px;
+  }
+
+  .card-co2{
+    width: 18rem; 
+    background-color: white;
+    
+  }
+
+  .img-small {
+
+    height: 150px;
+    width: 150px;
+    margin-bottom: 4px;
+  }
+
+  .fondo-morado{
+
+    background-color: mediumpurple;
+  }
+
+  .marginde1{
+    margin-right: 1%;
+}
+
+.marginrightde8px{
+  margin-right: 8px;
+}
+
+
+.margintopde2{
+  margin-top: 2%;
+}
+
+table {
+  width: 100%;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.reduce-pad{
+ padding-top: 0%;
+ padding-right: 0;
+ padding-left: 0%;
+ padding-bottom: 0%;
+}
+
+/* body {
+
+background-color: blue;
+
+} */
+
+.columnas{
+  display: inline-block;
+  width: 70px;
+  height: 50px;
+  border-style: solid;
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: 2px;
+  margin-right: 1px;
+}
+
+.columnasl{
+  display: inline-block;
+  width: 100px;
+  height: 60px;
+  border-style: solid;
+  text-align: center;
+  padding-top: 3px;
+  margin-bottom: 2px;
+  margin-right: 1px;
+}
+
+
+
+.leyenda{
+
+  padding-top: 27px;
+
+}
+
+.alcatt{
+
+  width: 120px;
+}
+
+.columnasv{
+  display: inline-block;
+  width: 70px;
+  height: 50px;
+  border-style:none;
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: 2px;
+  margin-right: 1px;
+}
+
+.griscells{
+
+  background-color:dimgray;
+  
+  }
+
+
+.onm1{
+
+background-color: darkgreen;
+
+}
+
+.alca2{
+
+  background-color:darkslateblue;
+  }
+
+  .alcate3{
+
+    background-color:hotpink;
+    }
+
+    .mdt4{
+
+      background-color:orange;
+      }
+
+      .lanta5{
+
+        background-color:orangered;
+        }
+
+
+        .acti6{
+
+          background-color:salmon;
+          }
+
+          .om7{
+
+            background-color:yellow;
+            }
+
+
+            .mtl8{
+
+              background-color:yellowgreen;
+              }
+
+              .halog9{
+
+                background-color:teal;
+                }
+
+                .gano10{
+
+                  background-color:cornflowerblue;
+                  }
+
+                .estilopeli{
+
+                  outline: solid;
+                  width: 300px;
+                  margin-bottom: 10px;
+                  margin-top: 10px;
+                  margin-right: 10px;
+                  margin-left: 0px;
+                  display:inline-block;
+                  
+                }
+
+                .test2 {
+                  display:inline-block;
+                  
+                  padding-left: 50px;
+                  border: none;
+                  
+
+                }
+
+                .test3{
+
+                  margin-right: 4px;
+                }
+
+
+                .test4{
+
+                  margin-right: 50px;
+
+                }
+
+                .test5{
+
+                  margin-bottom: 6px;
+
+                }
+
+                .estilocajita{
+
+                  outline: solid;
+                  width: 300px;
+                  margin-bottom: 10px;
+                  margin-top: 10px;
+                  margin-right: 10px;
+                  margin-left: 0px;
+                  
+                  
+                }
+
+                .sinborde {
+
+                  border: none;
+                }
+                
+                .pruebaxd{
+
+                  display: inline;
+                  display:inline-block;
+                }
+
+                .img-size {
+
+                  width: 100%;
+                  height: 200px;
+                  object-fit:contain;
+                }
+
+
+                

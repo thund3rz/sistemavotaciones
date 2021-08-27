@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linkeando css y boostrap css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <!----------------------->
+    <title>Document</title>
+</head>
+<body>
+    {{#if EstaAutenticado}}
+
+    <div class="card">
+    
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">{{#if ModoEditar}}Edicion de los puestos.{{else}}Agregar puestos.{{/if}}</h1>
+    </div>
+
+        <!--cuerpo del formulario-->
+        <div class="card-body">
+
+            <form method="POST" action="{{#if ModoEditar}}/edicion-puestos{{else}}/agregar-puestos{{/if}}">
+            <!--campo nombre del puesto-->
+            <div class="mb-3">
+                <label for="nombrepu" class="form-label">Nombre del puesto:</label>
+                <input type="text" class="form-control" name="Nombrepu" id="nombrepu" value="{{#if ModoEditar}}{{puesto.nombre}}{{/if}}"/>
+            </div>
+            <!-------------------->
+            <!--campo estado del puesto-->
+            <div class="mb-3">
+                <label for="estadop" class="form-label">Estado:</label>
+                
+                <select id="estadop" name="Estadopu" class="form-select">
+                    <option value="{{#if ModoEditar}} {{puesto.estado}} {{else}} {{/if}}"selected>{{#if ModoEditar}} {{puesto.estado}} {{else}}Seleccione el estado del puesto{{/if}}</option>
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>
+            <!-------------------->
+            <!--campo input hidden-->
+            {{#if ModoEditar}} 
+            
+                <input type="hidden" name="puestoId" value="{{puesto.id}}">
+            
+            {{/if}}
+            
+            <!-------------------->
+
+            <!--boton guardar/actualizar-->
+            <button type="submit"  id="btn-guardar" class="btn btn-primary float-end">{{#if ModoEditar}}Actualizar{{else}}Guardar{{/if}}</button>
+            <!-------------------->
+        </form>
+        </div>  
+        <!-------------------->
+
+    </div>
+
+<a href="/crud-puestos" class="btn btn-secondary d-block w-100">Volver</a>
+
+    {{else}}
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">No autorizado para ver esta seccion, debe estar logeado como administrador.</h1>
+        </div>
+{{/if}}
+</body>
+
+<!--linkeando js, boostrap js y jquery-->
+<script src="/assets/js/jquery/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+<!----------------------->
+</html>

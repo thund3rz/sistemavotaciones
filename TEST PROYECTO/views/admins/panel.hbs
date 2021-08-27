@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linkeando css y boostrap css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <!----------------------->
+    <title>Document</title>
+</head>
+
+
+<body class="">
+
+  {{#if EstaAutenticado}}
+
+    <form action="/logout" method="POST">
+    <button class="btn btn-danger float-end" type="submit">Cerrar Sesion</button>
+    <a class="btn btn-secondary float-end marginrightde8px" href="/agregar-admins">Agregar admins</a>
+    <a class="btn btn-secondary float-end marginrightde8px" href="/">Volver al inicio</a>
+    </form>
+
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center"></div>
+
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Panel administrativo</h1>
+      <p class="fs-5 text-muted">Desde aqui se puede manejar todo el sistema.</p>
+    </div>
+  </header>
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+  <main>
+    <div class="row  row-cols-md-5  text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+          <div class="card-header py-3 text-white bg-secondary border-secondary">
+            <h4 class="card-title pricing-card-title">Partidos<small class="text-muted fw-light"></small></h4>
+          </div>
+          <div class="card-body">
+              
+            <p>Manejo de los partidos.</p>
+            <a href="/crud-partidos" class="w-100 btn btn-lg btn-success">Entrar</a>
+            {{!-- <button type="button" class="w-100 btn btn-lg btn-primary">Entrar</button> --}}
+          </div>
+        </div>
+      </div>
+     <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+          <div class="card-header py-3 text-white bg-secondary border-secondary">
+            
+            <h4 class="card-title pricing-card-title">Candidatos<small class="text-muted fw-light"></small></h4>
+          </div>
+          <div class="card-body">
+            <p>Manejo de los candidatos.</p>
+
+
+            <a href="/crud-candidatos" class="w-100 btn btn-lg btn-success">Entrar</a>
+            {{!-- <button type="button" class="w-100 btn btn-lg btn-primary">Entrar</button> --}}
+          </div>
+        </div>
+      </div>
+      <div class="col" >
+        <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+          <div class="card-header py-3 text-white bg-secondary border-secondary">
+            <h4 class="card-title pricing-card-title">Electores<small class="text-muted fw-light"></small></h4>
+          </div>
+          <div class="card-body">
+            
+              <p>Manejo de los electores.</p>
+              <a href="/crud-electores" class="w-100 btn btn-lg btn-success">Entrar</a>
+            {{!-- <button type="button" class="w-100 btn btn-lg btn-primary">Entrar</button> --}}
+          </div>
+        </div>
+      </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+          <div class="card-header py-3 text-white bg-secondary border-secondary">
+            <h4 class="card-title pricing-card-title">Puestos<small class="text-muted fw-light"></small></h4>
+          </div>
+          <div class="card-body">
+            
+              <p>Manejo de los puestos.</p>
+              <a href="/crud-puestos" class="w-100 btn btn-lg btn-success">Entrar</a>
+            {{!-- <button type="button" class="w-100 btn btn-lg btn-primary">Entrar</button> --}}
+          </div>
+        </div>
+      </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+          <div class="card-header py-3 text-white bg-secondary border-secondary">
+            <h4 class="card-title pricing-card-title">Elecciones<small class="text-muted fw-light"></small></h4>
+          </div>
+          <div class="card-body">
+            
+              <p>Manejo de las elecciones.</p>
+              <a href="/crud-elecciones" class="w-100 btn btn-lg btn-success">Entrar</a>
+            {{!-- <button type="button" class="w-100 btn btn-lg btn-primary">Entrar</button> --}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="btn btn-secondary d-block w-100" style="margin-top: 15px;" href="/login">Volver</a>
+  </main>
+      </div>
+    <div class="col-md-1"></div>
+    </div>
+{{else}}
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">No autorizado para ver esta seccion, debe estar logeado como administrador.</h1>
+        </div>
+{{/if}}
+
+</body>
+
+<!--linkeando js, boostrap js y jquery-->
+<script src="/assets/js/jquery/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+<!----------------------->
+</html>

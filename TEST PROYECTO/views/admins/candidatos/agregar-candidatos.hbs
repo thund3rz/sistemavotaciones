@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linkeando css y boostrap css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <!----------------------->
+    <title>Document</title>
+</head>
+<body>
+    {{#if EstaAutenticado}}
+    {{#if hasPartidos}}
+    {{#if hasPuestos}}
+    <div class="card">
+
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">{{#if ModoEditar}}Edicion de los candidatos.{{else}}Agregar candidatos.{{/if}}</h1>
+    </div>
+
+        <!--cuerpo del formulario-->
+        <div class="card-body">
+
+            <form method="POST" enctype="multipart/form-data" action="{{#if ModoEditar}}/edicion-candidatos{{else}}/agregar-candidatos{{/if}}">
+            <!--campo nombre del candidato-->
+            <div class="mb-3">
+                <label for="nombrec" class="form-label">Nombre del candidato:</label>
+                <input type="text" class="form-control" name="Nombrec" id="nombrec" value="{{#if ModoEditar}}{{candidato.nombre}}{{/if}}"/>
+            </div>
+            <!-------------------->
+            <!--campo apellido del candidato-->
+            <div class="mb-3">
+                <label for="apellidoc" class="form-label">Apellido del candidato:</label>
+                <input type="text" class="form-control" name="Apellidoc" id="apellidoc" value="{{#if ModoEditar}}{{candidato.apellido}}{{/if}}"/>
+            </div>
+            <!-------------------->
+            <!--campo partido del candidato-->
+            <div class="mb-3">
+                <label for="partidoc" class="form-label">Partido del candidato:</label>
+                <select id="partidoc" name="Partidoc" class="form-select">
+                    <option value="{{#if ModoEditar}} {{candidato.partidoId}}Sin Asignar{{/if}}"selected>{{#if ModoEditar}} {{candidato.partidoId}} {{else}}Seleccione un partido{{/if}}</option>
+
+                    {{#each partidos as |partido|}}
+                        <option value="{{partido.id}}">{{partido.nombre}} ID: {{partido.id}}</option>
+                    {{/each}}
+
+                </select>
+            </div>
+            <!-------------------->
+            <!--campo puesto del candidato-->
+            <div class="mb-3">
+                <label for="puestoc" class="form-label">Puesto del candidato:</label>
+                <select id="puestoc" name="Puestoc" class="form-select">
+                    <option value="{{#if ModoEditar}} {{candidato.puestoId}}Sin Asignar{{/if}}"selected>{{#if ModoEditar}} {{candidato.puestoId}} {{else}}Seleccione un puesto{{/if}}</option>
+
+                    {{#each puestos as |puesto|}}
+                        <option value="{{puesto.id}}">{{puesto.nombre}} ID: {{puesto.id}}</option>
+                    {{/each}}
+
+                </select>
+            </div>
+            <!-------------------->
+            <!--campo foto del candidato-->
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Seleccione una imagen</label>
+                <input class="form-control form-control-sm" id="formFileSm" name="ImagePath" type="file">
+            </div>
+            <!-------------------->
+            <!--campo estado del candidato-->
+            <div class="mb-3">
+                <label for="estadoc" class="form-label">Estado:</label>
+                
+                <select id="estadoc" name="Estadoc" class="form-select">
+                    <option value="{{#if ModoEditar}} {{candidato.estado}} {{else}} {{/if}}"selected>{{#if ModoEditar}} {{candidato.estado}} {{else}}Seleccione el estado del candidato{{/if}}</option>
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>
+            <!-------------------->
+            <!--campo input hidden-->
+            {{#if ModoEditar}} 
+            
+                <input type="hidden" name="candidatoId" value="{{candidato.id}}">
+            
+            {{/if}}
+            
+            <!-------------------->
+
+            <!--boton guardar/actualizar-->
+            <button type="submit"  id="btn-guardar" class="btn btn-primary float-end">{{#if ModoEditar}}Actualizar{{else}}Guardar{{/if}}</button>
+            <!-------------------->
+        </form>
+        </div>  
+        <!-------------------->
+
+    </div>
+
+<a href="/crud-candidatos" class="btn btn-secondary d-block w-100">Volver</a>
+{{else}}
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">No hay puestos creados en el sistema. Debe haber al menos un puesto electivo para agregar candidatos al sistema.</h1>
+            <a href="/crud-candidatos" class="w-100 btn btn-lg btn-secondary">Volver</a>
+        </div>
+
+{{/if}}
+
+        {{else}}
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">No hay partidos creados en el sistema. Debe haber al menos un partido para agregar candidatos al sistema.</h1>
+            <a href="/crud-candidatos" class="w-100 btn btn-lg btn-secondary">Volver</a>
+        </div>
+        {{/if}}
+
+                {{else}}
+                    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                    <h1 class="display-4 fw-normal">No autorizado para ver esta seccion, debe estar logeado como administrador.</h1>
+                    </div>
+                {{/if}}
+
+</body>
+
+<!--linkeando js, boostrap js y jquery-->
+<script src="/assets/js/jquery/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+<!----------------------->
+</html>

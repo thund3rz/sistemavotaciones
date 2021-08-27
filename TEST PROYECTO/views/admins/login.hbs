@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Inicia sesion como administrador</h1>
+      <p class="fs-5 text-muted">Manejo del sistema para administradores.</p>
+    </div>
+        <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+        <section class="login-clean">
+            <form method="post" action="/postsetsession">
+                <h2 class="visually-hidden">Inicio de sesion para admins</h2>
+                <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
+                <div class="mb-3"><input type="email" class="form-control" name="email" placeholder="Email" /></div>
+                <div class="mb-3"><input type="password" class="form-control" name="password" placeholder="Contraseña" /></div>
+                <div class="mb-3"><button class="btn btn-success d-block w-100" type="submit">Iniciar sesion</button></div>
+            </form>
+                <a class="btn btn-secondary d-block w-100" href="/">Volver</a>
+        </section>
+
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+</body>
+</html>

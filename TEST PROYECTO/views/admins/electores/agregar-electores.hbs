@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linkeando css y boostrap css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <!----------------------->
+    <title>Document</title>
+</head>
+<body>
+    
+    {{#if EstaAutenticado}}
+    <div class="card">
+
+    
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">{{#if ModoEditar}}Edicion de los electores.{{else}}Agregar electores{{/if}}</h1>
+    </div>
+
+        <!--cuerpo del formulario-->
+        <div class="card-body">
+
+            <form method="POST" action="{{#if ModoEditar}}/edicion-electores{{else}}/agregar-electores{{/if}}">
+            <!--campo cedula del elector-->
+            <div class="mb-3">
+                <label for="cedulae" class="form-label">Cedula del elector:</label>
+                <input type="text" class="form-control" name="Cedulae" id="cedulae" value="{{#if ModoEditar}}{{elector.cedula}}{{/if}}"/>
+            </div>
+            <!-------------------->
+            <!--campo nombre del elector-->
+            <div class="mb-3">
+                <label for="nombree" class="form-label">Nombre del elector:</label>
+                <input type="text" class="form-control" name="Nombree" id="nombree" value="{{#if ModoEditar}}{{elector.nombre}}{{/if}}"/>
+            </div>
+            <!-------------------->
+            <!--campo apellido del elector-->
+            <div class="mb-3">
+                <label for="apellidoe" class="form-label">Apellido del elector:</label>
+                <input type="text" class="form-control" name="Apellidoe" id="apellidoe" value="{{#if ModoEditar}}{{elector.apellido}}{{/if}}"/>
+            </div>
+            <!-------------------->
+            <!--campo correo del elector-->
+            <div class="mb-3">
+                <label for="correoe" class="form-label">Correo:</label>
+                <input type="email" class="form-control" name="Correoe" id="correoe" value="{{#if ModoEditar}}{{elector.correo}}{{/if}}"/>
+            </div>
+            <!-------------------->
+            <!--campo estado del elector-->
+            <div class="mb-3">
+                <label for="estadoe" class="form-label">Estado:</label>
+                
+                <select id="estadoe" name="Estadoe" class="form-select">
+                    <option value="{{#if ModoEditar}} {{elector.estado}} {{else}} {{/if}}"selected>{{#if ModoEditar}} {{elector.estado}} {{else}}Seleccione el estado del elector{{/if}}</option>
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>
+            <!-------------------->
+            <!--campo input hidden-->
+            {{#if ModoEditar}} 
+            
+                <input type="hidden" name="electorId" value="{{elector.id}}">
+            
+            {{/if}}
+            
+            <!-------------------->
+
+            <!--boton guardar/actualizar-->
+            <button type="submit"  id="btn-guardar" class="btn btn-primary float-end">{{#if ModoEditar}}Actualizar{{else}}Guardar{{/if}}</button>
+            <!-------------------->
+        </form>
+        </div>  
+        <!-------------------->
+
+    </div>
+
+<a href="/crud-electores" class="btn btn-secondary d-block w-100">Volver</a>
+
+    {{else}}
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">No autorizado para ver esta seccion, debe estar logeado como administrador.</h1>
+        </div>
+    {{/if}}
+</body>
+
+<!--linkeando js, boostrap js y jquery-->
+<script src="/assets/js/jquery/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+<!----------------------->
+</html>

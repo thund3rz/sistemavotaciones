@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linkeando css y boostrap css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <!----------------------->
+    <title>Document</title>
+</head>
+<body>
+    {{#if EstaAutenticado}}
+    {{#if hasPuestos}}
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Listado de puestos.</h1>
+    </div>
+    
+    {{#each puestos as |puesto|}}
+
+        <div class="card mb-4 rounded-3 shadow-sm border-secondary sinborde pruebaxd">
+
+          <div class="card-body estilocajita">
+            <p>ID: {{puesto.id}}</p>
+            <p>Nombre: {{puesto.nombre}}</p>
+            <p>Estado: {{puesto.estado}}</p>
+            
+
+
+            {{!-- <a href="" class="w-100 btn btn-lg btn-success">Votar</a> --}}
+            
+          </div>
+        </div>
+
+    {{/each}}
+
+
+{{else}}
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">No hay puestos creados en el sistema.</h1>
+        </div>
+{{/if}}
+<a href="/crud-puestos" class="btn btn-secondary d-block w-100">Volver</a>
+
+        {{else}}
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">No autorizado para ver esta seccion, debe estar logeado como administrador.</h1>
+        </div>
+{{/if}}
+</body>
+<!--linkeando js, boostrap js y jquery-->
+<script src="/assets/js/jquery/jquery-3.6.0.min.js"></script>
+<script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+<!----------------------->
+</html>
