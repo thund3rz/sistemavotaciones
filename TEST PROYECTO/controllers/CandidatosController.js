@@ -9,8 +9,8 @@ const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransport({
 service: "gmail",
 auth:{
-    user: "phpitladiplomado@gmail.com",
-    pass: "#Querty123"
+    user: "elcorreodedondeenvias@gmail.com",
+    pass: "lapassword"
 }
 
 });
@@ -80,8 +80,8 @@ exports.GetAgregarCandidatos = (req,res,next) => {  //ESTE ESTA UN POCO DIFERENT
             res.redirect("/crud-candidatos");
 
             return transporter.sendMail({
-                from: "phpitladiplomado@gmail.com",
-                to: "bladimirx99@gmail.com",
+                from: "elcorreodedondeenvias@gmail.com",
+                to: "tucorreo@gmail.com",
                 subject: "Sistema de votaciones de Alonso Ramirez 2018-6877",
                 html: `<h2>El candidato ${nombrec} ${apellidoc} para puesto ID ${puestoc} se ha creado correctamente.</h2>`
             });
